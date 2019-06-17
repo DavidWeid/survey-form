@@ -13,7 +13,20 @@
 
     <h1 id="title">Title</h1>
     <p id="description">Short explanation</p>
-    <form id="survey-form" action=""></form>
+    <form id="survey-form" action="/url-to-submit-data">
+      <label id="name-label" for="name">Name: </label>
+      <input type="text" name="name" id="name" placeholder="Name"/>
+
+      <label id="email-label" for="email">Email: </label>
+      <input type="email" name="email" id="email" placeholder="Email">
+
+      <label id="number-label" for="number">Age: </label>
+      <input type="number" name="number" id="number" min="14" max="85" placeholder="Age">
+
+      <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
 
   </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
