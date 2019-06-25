@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Employee Survey Form</title>
+    <script src="https://kit.fontawesome.com/a7c0df4629.js"></script>
+    <link rel="stylesheet" href="./assets/normalize.css">
+    <link rel="stylesheet" href="./assets/main.css">
+  </head>
+  <body>
+
+    <h1 id="title">Title</h1>
+    <p id="description">Short explanation</p>
+    <form id="survey-form" action="/url-to-submit-data">
+      <label id="name-label" for="name">Name: </label>
+      <input type="text" name="name" id="name" placeholder="Name"/>
+
+      <label id="email-label" for="email">Email: </label>
+      <input type="email" name="email" id="email" placeholder="Email">
+
+      <label id="number-label" for="number">Age: </label>
+      <input type="number" name="number" id="number" min="14" max="85" placeholder="Age">
+
+      <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous""></script>
+  <script src="./assets/main.js"></script>
+</html>
