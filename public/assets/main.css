@@ -1,5 +1,64 @@
-*, html, body {
-    margin: 0 auto;
-    font-family: sans-serif;
-    line-height: 150%;
+*,
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+}
+
+html {
+  font-family: "Amiko", "Archivo", sans-serif;
+  text-align: center;
+  font-size: calc(1em + 1vw);
+}
+
+button,
+input {
+  font-size: inherit;
+}
+
+.main-content {
+}
+
+.primary-choice,
+.secondary-choice {
+  height: 50%;
+}
+
+.primary-choice {
+  background-color: bisque;
+}
+
+.secondary-choice {
+  background-color: aquamarine;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.primary-btn-div {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: palegoldenrod;
+}
+
+.btn {
+  padding: 10px;
+  height: auto;
 }
