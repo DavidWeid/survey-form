@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 db.sequelize
@@ -21,6 +21,9 @@ db.sequelize
   .then(() => {
     db.User.create({
       fullname: "David Weid"
+    });
+    db.User.create({
+      fullname: "Jessica Nasab"
     });
 
     app.listen(PORT, () => {
