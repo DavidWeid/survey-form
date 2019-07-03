@@ -43,6 +43,44 @@ db.sequelize
       description: "Please answer the following questions as best and honestly as you can. Your answers will be completely anonymous. Remember, your feedback is greatly appreciated!",
       active: true
     });
+    db.Question.create({
+      text: "Question 1 text",
+      type: "radio",
+      SurveyId: 1
+    });
+    db.Question.create({
+      text: "Question 2 text",
+      type: "radio",
+      SurveyId: 1
+    });
+    db.Answer.create({
+      style: "radio",
+      value: "Answer 1",
+      QuestionId: 1
+    });
+    db.Answer.create({
+      style: "radio",
+      value: "Answer 2",
+      QuestionId: 1
+    });    db.Answer.create({
+      style: "radio",
+      value: "Answer 3",
+      QuestionId: 1
+    });
+    db.Answer.create({
+      style: "radio",
+      value: "Answer 2.1",
+      QuestionId: 2
+    });
+    db.Answer.create({
+      style: "radio",
+      value: "Answer 2.2",
+      QuestionId: 2
+    });    db.Answer.create({
+      style: "radio",
+      value: "Answer 2.3",
+      QuestionId: 2
+    });
 
     app.listen(PORT, () => {
       console.log("Listening on port %s", PORT);

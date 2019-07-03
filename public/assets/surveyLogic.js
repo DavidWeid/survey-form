@@ -10,10 +10,10 @@ $(document).ready(function() {
     url: "/api/surveys/active",
     method: "GET"
   }).then(res => {
-    survey = res;
+    survey = res[0];
     console.log(survey);
-    $("#title").text(survey[0].name);
-    $("#description").text(survey[0].description);
+    $("#title").text(survey.name);
+    $("#description").text(survey.description);
   });
 
   // Display custom header

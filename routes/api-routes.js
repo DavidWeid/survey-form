@@ -12,7 +12,19 @@ module.exports = app => {
   // Send the currently active Survey
   app.get("/api/surveys/active", (req, res) => {
     console.log("surveys api route");
-    db.Survey.findAll({ active: true }).then(dbSurvey => {
+    db.Survey.findAll({
+      active: true,
+      include: [
+        {
+          model: db.Question,
+          include: [
+            {
+              model: db.Answer
+            }
+          ]
+        }
+      ]
+    }).then(dbSurvey => {
       res.json(dbSurvey);
     });
   });
