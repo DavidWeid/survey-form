@@ -7,7 +7,7 @@ body {
 html {
   font-family: "Amiko", "Archivo", sans-serif;
   text-align: center;
-  font-size: calc(0.75em + 0.75vw);
+  font-size: calc(0.75em + 0.65vw);
 }
 
 button,
@@ -16,13 +16,36 @@ input {
   font-family: inherit;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.true-disabled {
+  opacity: 0.25;
+  user-select: none;
+  pointer-events: none;
+}
+
 .main-content {
   height: 100%;
 }
 
-.primary-choice,
+.primary-choice {
+  height: 40%;
+}
+
 .secondary-choice {
-  height: 50%;
+  height: 60%;
 }
 
 .primary-choice {
@@ -69,11 +92,11 @@ input {
 }
 
 .secondary-btn-div {
-  height: 90%;
+  min-height: 90%;
+  overflow: auto;
   width: 98%;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: aliceblue;
 }
 
@@ -81,11 +104,10 @@ input {
   background-color: cadetblue;
   color: white;
   padding: 16px;
-  border: none;
-  cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: cornflowerblue;
 }
 
@@ -99,7 +121,7 @@ input {
   position: absolute;
   background-color: aliceblue;
   min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -111,6 +133,7 @@ input {
 
 .dropdown-content a:hover {
   background-color: snow;
+  cursor: pointer;
 }
 
 .show {

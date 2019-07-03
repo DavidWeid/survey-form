@@ -6,27 +6,36 @@ $(document).ready(function() {
     url: "/api/users",
     method: "GET"
   }).then(res => {
-    console.log(res);
     users = res;
     console.log(users);
   });
 
   // When User clicks "Employee", display "employee-select"
   $("#employee-btn").click(() => {
-    const employees = users;
-    console.log(employees);
-
-    const dropDownItemArr = employees.map(employee => {
-      return $("<a href='#'/>").attr("id", employee.id).html(employee.fullname);
-    });
-
-    console.log(dropDownItemArr);
-
     $(".secondary-btn-div").empty();
+    const employees = users;
+    const dropDownItemArr = employees.map(employee => {
+
+        let disabled = "true-disabled";
+
+        if (employee.completed === false) {
+            disabled = "false-disabled";
+        }
+
+        console.log(disabled);
+
+      return $("<a/>")
+        .attr("href", "./survey")
+        .addClass("employee-name-choice name-btn")
+        .addClass(disabled)
+        .attr("id", employee.id)
+        .attr("disabled", disabled)
+        .attr("onClick", "runSurvey(this.id)")
+        .html(employee.fullname);
+    });
     const dropDownDiv = $("<div/>");
     const employeeSelect = $("<button>Select Name</button>");
     const dropDownMenu = $("<div/>");
-    const dropDownItem = $("<a href='#'>Hello</a>");
 
     dropDownDiv.addClass("dropdown");
     employeeSelect
@@ -36,7 +45,9 @@ $(document).ready(function() {
     dropDownMenu.addClass("dropdown-content").attr("id", "employeeDropDown");
     $(".secondary-btn-div").append(dropDownDiv);
     $(dropDownDiv).append(employeeSelect, dropDownMenu);
-    $(dropDownMenu).append(dropDownItem);
+    for (let i = 0; i < dropDownItemArr.length; i++) {
+      $(dropDownMenu).append(dropDownItemArr[i]);
+    }
   });
 });
 
@@ -49,13 +60,15 @@ const dropDownAction = () => {
 $(window).click(e => {
   if (!e.target.matches(".dropbtn")) {
     const dropdowns = $(".dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
+    for (let i = 0; i < dropdowns.length; i++) {
       let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
+      $(openDropdown).removeClass("show");
     }
   }
 });
+
+const runSurvey = id => {
+    console.log(id);
+    localStorage.setItem("user-id", id);
+}
 // End doc.ready

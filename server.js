@@ -20,10 +20,23 @@ db.sequelize
   .sync(syncOptions)
   .then(() => {
     db.User.create({
-      fullname: "David Weid"
+      fullname: "David Weid",
+      completed: true
     });
     db.User.create({
       fullname: "Jessica Nasab"
+    });
+    db.User.create({
+      fullname: "Javier Aleman"
+    });
+    db.User.create({
+      fullname: "Maria Castro"
+    });
+    db.User.create({
+      fullname: "Cherie Sherman"
+    });
+    db.User.create({
+      fullname: "Amy Mendez"
     });
 
     app.listen(PORT, () => {
