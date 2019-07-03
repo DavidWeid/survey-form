@@ -30,7 +30,7 @@ $(document).ready(function() {
         .addClass(disabled)
         .attr("id", employee.id)
         .attr("disabled", disabled)
-        .attr("onClick", "runSurvey(this.id)")
+        .attr("onClick", "runSurvey(this.id, this.innerHTML)")
         .html(employee.fullname);
     });
     const dropDownDiv = $("<div/>");
@@ -67,8 +67,9 @@ $(window).click(e => {
   }
 });
 
-const runSurvey = id => {
-    console.log(id);
+const runSurvey = (id, name) => {
+    console.log(id, name);
     localStorage.setItem("user-id", id);
+    localStorage.setItem("user-name", name);
 }
 // End doc.ready

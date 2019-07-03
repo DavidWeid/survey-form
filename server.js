@@ -38,6 +38,11 @@ db.sequelize
     db.User.create({
       fullname: "Amy Mendez"
     });
+    db.Survey.create({
+      name: "Test Survey 1",
+      description: "Please answer the following questions as best and honestly as you can. Your answers will be completely anonymous. Remember, your feedback is greatly appreciated!",
+      active: true
+    });
 
     app.listen(PORT, () => {
       console.log("Listening on port %s", PORT);
