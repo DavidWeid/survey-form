@@ -5,6 +5,9 @@ $(document).ready(function() {
   console.log(userID);
   console.log(userName);
 
+  // Display custom header
+  $("#header").text(`Welcome ${userName}`);
+
   // Grab active Survey
   $.ajax({
     url: "/api/surveys/active",
@@ -14,8 +17,13 @@ $(document).ready(function() {
     console.log(survey);
     $("#title").text(survey.name);
     $("#description").text(survey.description);
+
+    const questionsArr = survey.Questions.map(question => {
+        const questionText = question.text;
+        console.log(questionText);
+        return questionText;
+    });
+    console.log(questionsArr);
   });
 
-  // Display custom header
-  $("#header").text(`Welcome ${userName}`);
 });
