@@ -6,20 +6,160 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Employee Survey Form</title>
     <script src="https://kit.fontawesome.com/a7c0df4629.js"></script>
-    <link rel="stylesheet" href="./assets/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Amiko|Archivo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/main.css"/>
-    <link rel="stylesheet" href="./assets/surveyCSS.css"/>
+    <link rel="stylesheet" href="./assets/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Amiko|Archivo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="./assets/surveyCSS.css" />
   </head>
   <body>
-
     <h1 id="header">Welcome</h1>
     <p id="title">Survey</p>
-    <p id="description"></p>
-    <form id="survey-form" action="/url-to-submit-data">
-      <label id="name-label" for="name">Name: </label>
-      <input type="text" name="name" id="name" placeholder="Name"/>
-      <br/>
+    <form id="survey-form" name="survey-form">
+      <p id="description"></p>
+
+      <div class="question-block">
+        <label class="question-text">Question 1?</label>
+        <ul class="ls-block">
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question1"
+              id=""
+              value="answer1"
+            /><label>Answer 1</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question1"
+              id=""
+              value="answer2"
+            /><label>Answer 2</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question1"
+              id=""
+              value="answer3"
+            /><label>Answer 3</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question1"
+              id=""
+              value="answer4"
+            /><label>Answer 4</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="question-block">
+        <label class="question-text">Question 2?</label>
+        <ul class="ls-block">
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question2"
+              id=""
+              value="answer1"
+            /><label>Answer 1</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question2"
+              id=""
+              value="answer2"
+            /><label>Answer 2</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question2"
+              id=""
+              value="answer3"
+            /><label>Answer 3</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question2"
+              id=""
+              value="answer4"
+            /><label>Answer 4</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="question-block">
+        <label class="question-text">Question 3?</label>
+        <ul class="mc-block">
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question3"
+              id=""
+              value="answer1"
+            /><label>Answer 1</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question3"
+              id=""
+              value="answer2"
+            /><label>Answer 2</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question3"
+              id=""
+              value="answer3"
+            /><label>Answer 3</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              class="answer-choice"
+              name="question3"
+              id=""
+              value="answer4"
+            /><label>Answer 4</label>
+          </li>
+          <li>
+              <input
+                type="radio"
+                class="answer-choice other"
+                name="question3"
+                id="other"
+                value=""
+              /><label>Other</label>
+              <input type="text" name="question3" id="other-text" placeholder="Type Here" disabled/>
+            </li>
+        </ul>
+      </div>
+
+      <div class="question-block">
+        <label id="name-label" for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Name" />
+      </div>
       <!-- <label id="email-label" for="email">Email: </label>
       <input type="email" name="email" id="email" placeholder="Email">
       <br/>
@@ -27,14 +167,14 @@
       <input type="number" name="number" id="number" min="14" max="85" placeholder="Age">
       <br/>
       <textarea name="comments" id="comments" cols="30" rows="10"></textarea> -->
-
-      <button type="submit">Submit</button>
+      <button type="submit" class="btn" id="form-submit">Submit Survey</button>
     </form>
-
   </body>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous""></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
   <script src="./assets/surveyLogic.js"></script>
   <!-- <script src="./assets/main.js"></script> -->
 </html>

@@ -28,4 +28,9 @@ module.exports = app => {
       res.json(dbSurvey);
     });
   });
+
+  app.post("/api/surveys/submit", (req, res) => {
+    console.log(req.body);
+    res.send("Form Submitted");
+  });
 };
